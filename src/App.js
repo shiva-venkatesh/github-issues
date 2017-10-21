@@ -6,7 +6,6 @@ import Issue from './components/issue.js'
 import './App.css'
 
 class App extends Component {
-
   constructor(props) {
     super(props)
     this.state = {
@@ -15,9 +14,8 @@ class App extends Component {
   }
 
   componentWillMount() {
-    axios.get('https://api.github.com/repos/zeit/next.js/issues')
+    axios.get('https://api.github.com/repos/zeit/next.js/issues?page=7')
     .then((response) => {
-      console.log(response.data);
       this.setState({issues: response.data})
     })
     .catch(function (error) {
@@ -28,7 +26,7 @@ class App extends Component {
   render() {
     const renderIssue = this.state.issues.map((issue) => {
       return(
-          <Issue issue={issue} />
+          <Issue issue={issue} key={issue.id} />
         )
     })
 
