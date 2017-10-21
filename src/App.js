@@ -32,8 +32,11 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div className="container">
-          <h3 className="repo-name col-sm-12">Next.js</h3>
+        <div className="container app-body">
+          <h3 className="s col-sm-12">Current Repository : Next.js</h3>
+          <div className="col-sm-12 filters">
+
+          </div>
           <div className="issues col-sm-12">
             {renderIssue}
           </div>

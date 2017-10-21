@@ -7,6 +7,7 @@ export default class Tag extends Component {
       color: '#ffffff',
       backgroundColor: '#' + this.props.label.color,
       fontFamily: 'PT sans',
+      fontSize: '16px',
       margin: '0 10px 10px 0',
       lineHeight: '26px',
       padding: '5px 20px 5px 23px',

@@ -2,3 +2,15 @@
   display: flex;
 	font-family: 'Source Sans Pro', sans-serif;
 }
+.repo-name {
+	color: #37515F;
+}
+
+.filters {
+	background-color: #ededed;
+	height: 200px;
+}
+
+.repo-name {
+	text-align: center;
+}

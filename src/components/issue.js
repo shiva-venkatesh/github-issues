@@ -21,7 +21,7 @@ export default class Issue extends Component {
         <div className="row issue-name">
           {this.props.issue.title}
         </div>
-        <div className="row">
+        <div className="row issue-number">
           {'#' + this.props.issue.number}
         </div>
         <div className="row label-container">
