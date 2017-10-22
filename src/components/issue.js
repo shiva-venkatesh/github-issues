@@ -27,6 +27,10 @@ export default class Issue extends Component {
         <div className="row label-container">
           {renderLabels}
         </div>
+        <div className="row issue-author">
+          <span className="author-text">created by <strong>{this.props.issue.user.login}</strong> </span>
+          <img src={this.props.issue.user.avatar_url} className="author-img" alt={this.props.issue.user.login} />
+        </div>
       </div>
 		)		
 	}
