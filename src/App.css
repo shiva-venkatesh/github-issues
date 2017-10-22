@@ -2,6 +2,11 @@
   display: flex;
 	font-family: 'Source Sans Pro', sans-serif;
 }
+
+.app-body {
+	padding-top: 10px;
+}
+
 .repo-name {
 	color: #37515F;
 }
@@ -13,4 +18,8 @@
 
 .repo-name {
 	text-align: center;
+}
+
+.filter-box {
+	padding-top: 10px;
 }
