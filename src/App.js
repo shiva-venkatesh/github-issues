@@ -33,7 +33,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="container app-body">
-          <h3 className="s col-sm-12">Current Repository : Next.js</h3>
+          <h3 className="repo-name col-sm-12">Current Repository : Next.js</h3>
           <div className="col-sm-12 filters">
 
           </div>
