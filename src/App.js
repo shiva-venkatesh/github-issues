@@ -4,7 +4,6 @@ import _ from 'lodash'
 
 import Issue from './components/issue.js'
 import FilterDropdown from './components/dropdown.js'
-import Switch from './components/switch.js'
 
 import './App.css'
 
