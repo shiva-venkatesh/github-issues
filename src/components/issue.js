@@ -28,7 +28,7 @@ export default class Issue extends Component {
           {renderLabels}
         </div>
         <div className="row issue-author">
-          <span className="author-text">created by <strong>{this.props.issue.user.login}</strong> </span>
+          <span className="author-text">created by <strong><a href={this.props.issue.user.html_url}>{this.props.issue.user.login}</a></strong> </span>
           <img src={this.props.issue.user.avatar_url} className="author-img" alt={this.props.issue.user.login} />
         </div>
       </div>
