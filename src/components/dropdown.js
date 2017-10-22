@@ -7,6 +7,7 @@ const FilterDropdown = ({placeholder, labelOptions, onChangeHandler}) => (
     fluid
     multiple
     selection
+    button
     options={labelOptions}
     onChange={onChangeHandler} 
   />
