@@ -21,6 +21,10 @@ class App extends Component {
       sortDropdownOptions: [
         {key: '1', value: 'newest', text: 'Newest'},
         {key: '2', value: 'oldest', text: 'Oldest'}
+      ],
+      sortCommentDropdownOptions: [
+        {key: '1', value: 'most_commented', text: 'Most commented'},
+        {key: '2', value: 'least_commented', text: 'Least commented'}
       ]
     }
     this.addFilterLabel = this.addFilterLabel.bind(this)
@@ -29,6 +33,7 @@ class App extends Component {
     this.fetchAssignees = this.fetchAssignees.bind(this)
     this.renderBlankSlate = this.renderBlankSlate.bind(this)
     this.selectSortOption = this.selectSortOption.bind(this)
+    this.selectCommentOptions = this.selectCommentOptions.bind(this)
   }
 
   componentWillMount() {
@@ -126,12 +131,18 @@ class App extends Component {
   }
 
   selectSortOption(e, data) {
-    debugger
-    console.log('the selected object data is' + data.value)
     if(data.value==='newest') {
       this.fetchIssues({sort: 'created', direction: 'desc'})
     } else {
       this.fetchIssues({sort: 'created', direction: 'asc'})
+    }
+  }
+
+  selectCommentOptions(e, data) {
+    if(data.value==='most_commented') {
+      this.fetchIssues({sort: 'comments', direction: 'desc'})
+    } else {
+      this.fetchIssues({sort: 'comments', direction: 'asc'})
     }
   }
 
@@ -150,7 +161,10 @@ class App extends Component {
               <FilterDropdown placeholder={'Labels'} labelOptions={this.state.formattedLabels} onChangeHandler={this.addFilterLabel} multiple />
             </div>
             <div className="col-sm-4 filter-box">
-              <FilterDropdown placeholder={'Sort by'} labelOptions={this.state.sortDropdownOptions} onChangeHandler={this.selectSortOption} />
+              <FilterDropdown placeholder={'Sort by date of creation'} labelOptions={this.state.sortDropdownOptions} onChangeHandler={this.selectSortOption} />
+            </div>
+            <div className="col-sm-4 filter-box">
+              <FilterDropdown placeholder={'Sort by comments'} labelOptions={this.state.sortCommentDropdownOptions} onChangeHandler={this.selectCommentOptions} />
             </div>
           </div>
           <div className="issues col-sm-12">
