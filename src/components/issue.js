@@ -19,7 +19,9 @@ export default class Issue extends Component {
 		return(
       <div className="issue col-sm-12" id={this.props.issue.id}>
         <div className="row issue-name">
-          {this.props.issue.title}
+          <a href={this.props.issue.html_url}>
+            {this.props.issue.title}
+          </a>
         </div>
         <div className="row issue-number">
           {'#' + this.props.issue.number}

@@ -13,7 +13,6 @@
 
 .filters {
 	background-color: #ededed;
-	height: 200px;
 }
 
 .repo-name {
@@ -26,4 +25,10 @@
 
 .centered-text {
 	text-align: center;
+}
+
+@media (min-width: 768px) {
+	.filters {
+		height: 60px;
+	}
 }

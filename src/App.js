@@ -29,7 +29,6 @@ class App extends Component {
     this.addFilterLabel = this.addFilterLabel.bind(this)
     this.fetchIssues = this.fetchIssues.bind(this)
     this.fetchLabels = this.fetchLabels.bind(this)
-    this.fetchAssignees = this.fetchAssignees.bind(this)
     this.renderBlankSlate = this.renderBlankSlate.bind(this)
     this.selectSortOption = this.selectSortOption.bind(this)
     this.selectCommentOptions = this.selectCommentOptions.bind(this)
@@ -45,7 +44,6 @@ class App extends Component {
     });
 
     this.fetchLabels()
-    this.fetchAssignees()
   }
 
   fetchIssues(filters) {
@@ -79,17 +77,6 @@ class App extends Component {
       .catch(function (error) {
         console.log(error);
       });
-  }
-
-  fetchAssignees() {
-    axios.get('https://api.github.com/repos/zeit/next.js/assignees')
-      .then((response) => {
-        console.log('assignees: ' + response.data)
-        this.setState({assignees: response.data})
-      })
-      .catch((err) => {
-        console.err(err)
-      })
   }
 
   mapLabels(dropdownOptionObject) {
